@@ -36,3 +36,59 @@
     transform: rotate(360deg);
   }
 }
+
+.App button {
+  margin: 20px;
+}
+.bars-section {
+  display: flex;
+  justify-content: center;
+  width: auto;
+  height: 600px;
+  overflow: hidden;
+}
+.bars {
+  background-color: pink;
+  width: 10px;
+  content: '';
+  margin: 2px;
+  transition: 10ms all ease;
+}
+.range-finder {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.range-value {
+  margin-left: 1%;
+}
+em {
+  opacity: 0.8;
+  font-family: 'Courier New', Courier, monospace;
+}
+button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.2s ease all;
+  font-family: 'Courier New', Courier, monospace;
+}
+button:hover {
+  background-color: #3d8b3f;
+}
+h2 {
+  font-family: 'Courier New', Courier, monospace;
+  text-decoration: underline;
+}
+.name {
+  margin-right: 10px;
+  font-family: 'Courier New', Courier, monospace;
+}
