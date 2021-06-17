@@ -1,6 +1,6 @@
 import './App.css'
 import { useState } from 'react'
-import { getbubbleSortAnime } from './bubblesort'
+import { getbubbleSortAnime } from './algorithms/bubblesort'
 import { RangeStepInput } from 'react-range-step-input'
 const PRIMARY_COLOR = 'pink'
 const SECONDARY_COLOR = 'red'
@@ -22,7 +22,7 @@ function App() {
     console.log(arr)
   }
 
-   /*  Selection Sort Algorithm */
+  /*  Selection Sort Algorithm */
 
   async function selectionSort(array) {
     let bars = document.querySelectorAll('.bars')
@@ -63,20 +63,19 @@ function App() {
           }
         }
         var k = bars[temp].style.height
-      bars[temp].style.height = bars[newValue].style.height
-      bars[newValue].style.height = k
-      /* console.log(bars[i].style.height, bars[newValue].style.height) */
+        bars[temp].style.height = bars[newValue].style.height
+        bars[newValue].style.height = k
+        /* console.log(bars[i].style.height, bars[newValue].style.height) */
       }
       a.length = 0
-      valueTemp.length = 0      
+      valueTemp.length = 0
       bars[i].style.backgroundColor = 'green'
-
     }
   }
 
-   /*  Selection Sort Algorithm */
+  /*  Selection Sort Algorithm */
 
-    /*  Bubble Sort Algorithm */
+  /*  Bubble Sort Algorithm */
 
   function bubbleSort(array) {
     const animations = getbubbleSortAnime(array)
@@ -102,7 +101,7 @@ function App() {
     }
   }
 
-   /*  Bubble Sort Algorithm */
+  /*  Bubble Sort Algorithm */
 
   return (
     <div className="App">
@@ -133,10 +132,7 @@ function App() {
       <br />
       <button onClick={generateArray}>Generate array</button>
       <button onClick={() => bubbleSort(array)}>Bubble Sort</button>
-      
-      <button onClick={() => selectionSort(array)}>
-        Selection Sort
-      </button>
+      <button onClick={() => selectionSort(array)}>Selection Sort</button>
 
       <div className="bars-section">
         {array.map((i) => (
