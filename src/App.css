@@ -92,3 +92,10 @@ h2 {
   margin-right: 10px;
   font-family: 'Courier New', Courier, monospace;
 }
+.algoname{
+  margin-top: 3%;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 600;
+  font-size: larger;
+  text-decoration: underline;
+}

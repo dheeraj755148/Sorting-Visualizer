@@ -8,10 +8,11 @@ function App() {
   const [array, setArray] = useState([])
   const [range, setRange] = useState(50)
   const [speed, setSpeed] = useState(10)
-
+  const [algoName, setAlgoName] = useState(`Let's sort something`)
   const ANIMATION_SPEED_MS = speed
 
   const generateArray = () => {
+    setAlgoName(`Let's sort something`)
     const lngth = range
     let arr = []
     do {
@@ -25,6 +26,7 @@ function App() {
   /*  Selection Sort Algorithm */
 
   async function selectionSort(array) {
+    setAlgoName('Selection Sort Running')
     let bars = document.querySelectorAll('.bars')
     /* console.log(bars) */
     for (let i = 0; i < array.length; i++) {
@@ -75,9 +77,37 @@ function App() {
 
   /*  Selection Sort Algorithm */
 
+  /* Insertion Sort */
+
+  async function insertionSort(array) {
+    alert('It is in development phase')
+    /* setAlgoName('Insertion Sort Running')
+    let bars = document.querySelectorAll('.bars')
+    for (let i = 1; i < array.length; i++) {
+      bars[i].style.backgroundColor = 'red'
+      await new Promise((resolve) =>
+        setTimeout(() => {
+          resolve()
+        }, ANIMATION_SPEED_MS)
+      )
+      console.log('pointer', bars[i].style.height)
+      const k = bars[i].style.height
+      let j = i - 1
+      while (j >= 0 && k < bars[j].style.height) {
+        bars[j + 1].style.height = bars[j].style.height
+        console.log('swap', bars[j + 1].style.height)
+        j = j - 1
+      }
+      bars[j + 1].style.height = k
+    } */
+  }
+
+  /* Insertion Sort */
+
   /*  Bubble Sort Algorithm */
 
   function bubbleSort(array) {
+    setAlgoName('Bubble Sort Running')
     const animations = getbubbleSortAnime(array)
     for (let i = 0; i < animations.length; i++) {
       const arrayBars = document.getElementsByClassName('bars')
@@ -130,10 +160,11 @@ function App() {
       </div>
       <em>Set array size and speed before generating array</em>
       <br />
+      <p className="algoname">{algoName}</p>
       <button onClick={generateArray}>Generate array</button>
       <button onClick={() => bubbleSort(array)}>Bubble Sort</button>
       <button onClick={() => selectionSort(array)}>Selection Sort</button>
-
+      <button onClick={() => insertionSort(array)}>Insertion Sort</button>
       <div className="bars-section">
         {array.map((i) => (
           <div
